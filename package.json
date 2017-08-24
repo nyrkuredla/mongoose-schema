@@ -1,0 +1,30 @@
+{
+  "name": "mongoose-schema",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nyrkuredla/mongoose-schema.git"
+  },
+  "author": "Ryan Kelley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nyrkuredla/mongoose-schema/issues"
+  },
+  "homepage": "https://github.com/nyrkuredla/mongoose-schema#readme",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.10.8",
+    "mustache-express": "^1.2.5",
+    "nodemon": "^1.11.0"
+  }
+}
