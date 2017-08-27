@@ -1,14 +1,14 @@
 const mongoose = require('mongoose')
 
 const MakeupSchema = new mongoose.Schema({
-brand: { type: String, require: true },
-name: { type: String, require: true },
+brand: { type: String, required: true },
+name: { type: String, required: true },
 makeupType: String,
 description: [{
   price: Number,
-  color: {type: String, require: true}
- }],
- imageURL: {type: String, require: true}
+  color: {type: String}
+}],
+ imageURL: {type: String, required: true}
 })
 
 //creating functions to sort through database

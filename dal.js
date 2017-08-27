@@ -17,14 +17,9 @@ function getMakeupById (makeupId) {
   return Makeup.findOne({ "_id": makeupId });
 }
 
-//getting makeup by brand name
-function getMakeupByBrand (brand) {
-  return Makeup.findByBrand(brand);
-}
-
 //getting makeup by type
 function getMakeupByType (type) {
-  return Makeup.findByType(type)
+  return Makeup.find({ "makeupType" : type })
 }
 
 //adding new makeup item to db
@@ -39,10 +34,15 @@ function addMakeup (newMakeup) {
 
 //deleting makeup from db using ID#
 function deleteMakeup (makeupId) {
-  return Makeup.deleteOne({ _id: makeupId })
+  return Makeup.deleteOne({ "_id": makeupId })
+}
+
+//updating collection using ID#
+function updateMakeup (makeupID, makeupNew) {
+  return Makeup.findOneAndUpdate({ "_id": makeupID }, makeupNew, { upsert : false })
 }
 
 //exporting functions
 module.exports = {
-  getAllMakeup, getMakeupById, getMakeupByBrand, getMakeupByType, addMakeup, deleteMakeup
+  getAllMakeup, getMakeupById, getMakeupByType, addMakeup, deleteMakeup, updateMakeup
 }

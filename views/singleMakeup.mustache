@@ -2,13 +2,12 @@
 <html>
   {{>_head}}
   <body>
+    {{>_header}}
     <div class="container">
       <h1>View Single Item</h1>
       <a class="caption" href="/all">Back to the collection.</a>
         {{#makeup}}
           {{>_singleMakeup}}
-        {{/makeup}}
-        {{^makeup}}
         {{/makeup}}
 
     </div>

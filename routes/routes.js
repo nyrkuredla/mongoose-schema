@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const {
-  getAllMakeup, getMakeupById, getMakeupByBrand, getMakeupByType, addMakeup, deleteMakeup
+  getAllMakeup, getMakeupById, getMakeupByType, addMakeup, deleteMakeup, updateMakeup
 } = require('../dal');
 
 router
@@ -39,24 +39,38 @@ router
       })
     })
 
-router
-    .route('/types')
-    .get(function (req, res) {
-      res.render('types')
-    })
-    .post(function (req, res) {
-      let chosenType = getMakeupByType(req.body.type);
-      console.log(chosenType);
-      res.send('wooo')
-      // res.render('makeup', { makeup : chosenType })
-    })
 
 router
-    .route('/brands')
-    .get(function (req, res) {
-      res.render('brands')
+  .route('/update/:id')
+  .get(function (req, res) {
+    const makeupId = req.params.id
+    console.log(makeupId)
+    getMakeupById(makeupId).then(function (makeup) {
+      res.render('update', {makeup})
+    })
+  })
+  .post(function (req, res) {
+    console.log(req.body)
+    const makeupId = req.body.id
+    const makeupNew = req.body
+    updateMakeup(makeupId, makeupNew).then(function (makeup) {
+      res.redirect('/all')
     })
 
+  })
 
+router
+  .route('/types')
+  .get(function (req, res) {
+    res.render('types')
+  })
+  .post(function (req, res) {
+    let makeupType = req.body.type;
+    console.log(makeupType)
+    getMakeupByType(makeupType).then(function (makeup) {
+      console.log(getMakeupByType(makeupType))
+      res.render('makeup', {makeup: makeupType})
+    })
+  })
 
   module.exports = router

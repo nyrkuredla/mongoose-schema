@@ -7,6 +7,26 @@ body {
   font-family: 'Mr De Haviland', cursive;
 }
 
+/*header styles*/
+
+
+.nav-pills a {
+  font-family: 'Mr De Haviland', cursive;
+  background-color: black;
+  font-size: 1.4em;
+  color: #CECECE;
+  border: 1px solid #CECECE;
+  transition-property: color background-color;
+  /*transition-duration: 1s;*/
+}
+.nav-pills a:hover {
+  background-color: black;
+  color: red;
+  border: 1px solid #CECECE;
+  text-decoration: none;
+}
+
+
 div.makeup {
   background-color: black;
   color: #CECECE;
