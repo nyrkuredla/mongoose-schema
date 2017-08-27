@@ -1,0 +1,100 @@
+body {
+  background-color: black;
+  background-image: url('./images/BLACK_I_desktop-1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #CECECE;
+  font-family: 'Mr De Haviland', cursive;
+}
+
+div.makeup {
+  background-color: black;
+  color: #CECECE;
+  font-family: 'Mr De Haviland', cursive;
+}
+
+div.jumbotron {
+  background-image: url('./images/gold-collection.jpg');
+  background-color: black;
+  color: #CECECE;
+  font-family: 'Mr De Haviland', cursive;
+}
+
+h1 {
+  background-color: black;
+  color: #CECECE;
+  padding: 10px 20px;
+  border: 1px solid #CECECE;
+}
+
+div.jumbotron div p a {
+  font-family: 'Mr De Haviland', cursive;
+  background-color: black;
+  font-size: 1.4em;
+  color: #CECECE;
+  border: 1px solid #CECECE;
+  transition-property: color background-color;
+  /*transition-duration: 1s;*/
+}
+div.jumbotron div p a:hover {
+  background-color: black;
+  color: red;
+  border: 1px solid #CECECE;
+  text-decoration: none;
+}
+
+div.button-group {
+  width: 40%;
+  margin: 0 auto;
+}
+
+/*makeup collection styles*/
+
+div.makeupDiv {
+  margin: 30px 0;
+  background-color: black;
+}
+
+img.makeup-pic {
+  width: 250px;
+  margin: 30px 45px 20px 45px;
+}
+
+p.caption {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9em;
+  padding: 10px;
+  text-align: center;
+}
+
+/*New Makeup form styles*/
+
+form.addnew {
+  margin: 0 auto;
+  padding: 50px 0;
+
+}
+
+form.addnew input, select {
+  font-family: 'Raleway', sans-serif;
+  background-color: black;
+  color: white;
+  font-size: 0.9em;
+  padding: 10px;
+  margin: 0 5px;
+}
+
+form.addnew select {
+  width: 150px;
+  height: 30px;
+}
+
+a.caption {
+  margin: 0 auto;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9em;
+  padding: 10px;
+  text-align: center;
+  color: #CECECE;
+  text-decoration: none;
+}

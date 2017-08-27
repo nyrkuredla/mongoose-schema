@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  {{>_head}}
+  <body>
+    <div class="container">
+      <h1>Add new item</h1>
+      <form class="addnew" action="/new" method="POST">
+        <input type="text" name="brand" value="" placeholder="Brand name..." required>
+        <input type="text" name="name" value="" placeholder="Name..." required>
+        <select class="type" name="type">
+          <option value="">Select type...</option>
+          <option value="eyeshadow">Eyeshadow</option>
+          <option value="lipstick">Lipstick</option>
+          <option value="eyeliner">Eyeliner</option>
+          <option value="contour">Contour</option>
+          <option value="bronzer">Bronzer</option>
+          <option value="highlighter">Highlighter</option>
+          <option value="mascara">Mascara</option>
+        </select>
+        <input type="text" name="price" value="" placeholder="Price:">
+        <input type="text" name="color" value="" placeholder="Color:" required>
+        <input type="text" name="imageURL" value="" placeholder="Image URL:" required>
+        <input class="submit" type="submit" name="submit" value="Submit!">
+      </form>
+    </div>
+  </body>
+</html>

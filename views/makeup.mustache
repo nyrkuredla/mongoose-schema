@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  {{>_head}}
+  <body>
+    <div class="container">
+      <h1>The Collection</h1>
+        {{#makeup}}
+          {{>_makeup}}
+        {{/makeup}}
+        {{^makeup}}
+          {{>_nuffin}}
+        {{/makeup}}
+    </div>
+  </body>
+</html>

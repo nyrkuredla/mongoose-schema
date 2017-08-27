@@ -8,9 +8,10 @@ description: [{
   price: Number,
   color: {type: String, require: true}
  }],
-price: Number
+ imageURL: {type: String, require: true}
 })
 
+//creating functions to sort through database
 MakeupSchema.statics.findByBrand = function (brand, cb) {
   return this.find({brand: brand})
 }

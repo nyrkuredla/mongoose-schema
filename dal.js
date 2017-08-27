@@ -1,28 +1,33 @@
+//pulling in Makeup schema from model file
 const Makeup = require('./models/Makeup')
 
+//setting up mongoose and bluebird
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 // Replace "test" with your database name.
 mongoose.connect('mongodb://localhost:27017/makeup');
 
+//getting all makeup from db
 function getAllMakeup () {
   return Makeup.find()
 }
 
-function getMakeupById () {
-  return Makeup.find({ _id: makeupId }).catch(function (err) {
-    console.log(err)
-  })
+//getting makeup by ID#
+function getMakeupById (makeupId) {
+  return Makeup.findOne({ "_id": makeupId });
 }
 
+//getting makeup by brand name
 function getMakeupByBrand (brand) {
   return Makeup.findByBrand(brand);
 }
 
+//getting makeup by type
 function getMakeupByType (type) {
   return Makeup.findByType(type)
 }
 
+//adding new makeup item to db
 function addMakeup (newMakeup) {
   const makeup = new Makeup(newMakeup)
   makeup.save(function (err) {
@@ -32,10 +37,12 @@ function addMakeup (newMakeup) {
   return Promise.resolve("success")
 }
 
+//deleting makeup from db using ID#
 function deleteMakeup (makeupId) {
   return Makeup.deleteOne({ _id: makeupId })
 }
 
+//exporting functions
 module.exports = {
   getAllMakeup, getMakeupById, getMakeupByBrand, getMakeupByType, addMakeup, deleteMakeup
 }
