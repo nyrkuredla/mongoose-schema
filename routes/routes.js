@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const {
-  getAllMakeup, getMakeupById, getMakeupByType, addMakeup, deleteMakeup, updateMakeup
+  getAllMakeup, getMakeupById, addMakeup, deleteMakeup, updateMakeup
 } = require('../dal');
 
 router
@@ -39,6 +39,21 @@ router
       })
     })
 
+router
+  .route('/delete/:makeupId')
+  .get(function (req, res) {
+    const makeupId = req.params.makeupId
+    getMakeupById(makeupId).then(function (makeup) {
+      res.render('delete', {makeup})
+    })
+  })
+  .post(function (req, res) {
+    const makeupId = req.params.makeupId
+    deleteMakeup(makeupId).then(function (makeup) {
+      res.redirect('/')
+    })
+  })
+
 
 router
   .route('/update/:id')
@@ -59,18 +74,5 @@ router
 
   })
 
-router
-  .route('/types')
-  .get(function (req, res) {
-    res.render('types')
-  })
-  .post(function (req, res) {
-    let makeupType = req.body.type;
-    console.log(makeupType)
-    getMakeupByType(makeupType).then(function (makeup) {
-      console.log(getMakeupByType(makeupType))
-      res.render('makeup', {makeup: makeupType})
-    })
-  })
 
   module.exports = router

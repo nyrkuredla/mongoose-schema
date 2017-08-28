@@ -2,6 +2,7 @@
 <html>
   {{>_head}}
   <body>
+    {{>_header}}
     <div class="container">
       <h1>Add new item</h1>
       <form class="addnew" action="/new" method="POST">
@@ -17,8 +18,8 @@
           <option value="highlighter">Highlighter</option>
           <option value="mascara">Mascara</option>
         </select>
-        <input type="text" name="price" value="" placeholder="Price:">
-        <input type="text" name="color" value="" placeholder="Color:" required>
+        <input type="text" name="description[price]" value="" placeholder="Price:">
+        <input type="text" name="description[color]" value="" placeholder="Color:" required>
         <input type="text" name="imageURL" value="" placeholder="Image URL:" required>
         <input class="submit" type="submit" name="submit" value="Submit!">
       </form>

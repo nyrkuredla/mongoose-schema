@@ -1,7 +1,7 @@
 <form class="addnew" action="/update/{{_id}}" method="POST">
   <input type="text" name="id" value={{_id}} readonly>
-  <input type="text" name="brand" value={{brand}} placeholder={{brand}} required>
-  <input type="text" name="name" value={{name}} placeholder={{name}} required>
+  <input type="text" name="brand" value="{{brand}}" placeholder="{{brand}}" required>
+  <input type="text" name="name" value="{{name}}" placeholder="{{name}}" required>
   <select class="type" name="type">
     <option value="">Select type...</option>
     <option value="eyeshadow">Eyeshadow</option>
@@ -12,8 +12,8 @@
     <option value="highlighter">Highlighter</option>
     <option value="mascara">Mascara</option>
   </select>
-  <input type="text" name="price" value={{price}} placeholder={{price}}>
-  <input type="text" name="color" value={{color}} placeholder={{color}} required>
-  <input type="text" name="imageURL" value={{imageURL}} required>
+  <input type="text" name="price" value="{{description.price}}" placeholder="{{price}}">
+  <input type="text" name="color" value="{{description.color}}" placeholder="{{color}}" required>
+  <input type="text" name="imageURL" value="{{imageURL}}" required>
   <input class="submit" type="submit" name="submit" value="Submit!">
 </form>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  {{>_head}}
+  <body>
+    {{>_header}}
+    <div class="container">
+      <h2>Delete item</h2>
+        {{#makeup}}
+        <form class="delete" action="/delete/{{_id}}" method="POST">
+          <p>Are you sure you want to delete {{name}}?</p>
+          <input type="submit" name="submit" value="Delete!">
+        </form>
+        {{/makeup}}
+    </div>
+  </body>
+</html>

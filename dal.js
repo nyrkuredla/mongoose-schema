@@ -17,10 +17,6 @@ function getMakeupById (makeupId) {
   return Makeup.findOne({ "_id": makeupId });
 }
 
-//getting makeup by type
-function getMakeupByType (type) {
-  return Makeup.find({ "makeupType" : type })
-}
 
 //adding new makeup item to db
 function addMakeup (newMakeup) {
@@ -44,5 +40,5 @@ function updateMakeup (makeupID, makeupNew) {
 
 //exporting functions
 module.exports = {
-  getAllMakeup, getMakeupById, getMakeupByType, addMakeup, deleteMakeup, updateMakeup
+  getAllMakeup, getMakeupById, addMakeup, deleteMakeup, updateMakeup
 }
